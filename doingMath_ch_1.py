@@ -135,6 +135,7 @@ def C_to_K(C):
 
 
 def print_menu():
+    print("0. exit")
     print("1. feet to meters")
     print("2. miles to kilmometers")
     print("3. fahrenheit to celsius")
@@ -142,17 +143,32 @@ def print_menu():
     print("5. celsius to kelvin")
 
 
+def prompt_converter():
+    choice = None
+    while choice != "0":
+        print_menu()
+        choice = input("Enter a listed number: ")
+        if choice == "1":
+            feet = int(input("Enter feet (as int): "))
+            inches = int(input("Enter inches (as int): "))
+            print(str(feet_to_meters(feet, inches)) + " meters")
+        if choice == "2":
+            miles = float(input("Enter miles: "))
+            print(str(miles_to_kilometers(miles)) + " kilometers")
+        if choice == "3":
+            fahrenheit = float(input("Enter degrees in fahrenheit: "))
+            print(str(F_to_C(fahrenheit)) + " degrees celsius")
+        if choice == "4":
+            celsius = float(input("Enter degrees in celsius: "))
+            print(str(C_to_F(celsius)) + " degrees fahrenheit")
+        if choice == "5":
+            celsius = float(input("Enter degrees in celsius: "))
+            print(str(C_to_K(celsius)) + " degrees kelvin")
+        input("Press enter to continue...")
+
 # def switch(n):
 #     switcher = {}
 
 
 if (__name__ == "__main__"):
-    print_menu()
-    choice = input("Enter a listed number: ")
-    if choice == "1":
-        feet = int(input("Enter feet (as int): "))
-        inches = int(input("Enter inches (as int): "))
-        print(feet_to_meters(feet, inches))
-    if choice == "2":
-        miles = float(input("Enter miles: "))
-        print(miles_to_kilometers(miles))
+    prompt_converter()

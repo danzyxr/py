@@ -143,7 +143,7 @@ def print_menu():
     print("5. celsius to kelvin")
 
 
-def prompt_converter():
+def unit_converter():  # this is too clunky
     choice = None
     while choice != "0":
         print_menu()
@@ -166,9 +166,11 @@ def prompt_converter():
             print(str(C_to_K(celsius)) + " degrees kelvin")
         input("Press enter to continue...")
 
+
 # def switch(n):
 #     switcher = {}
+# integrate switcher mechanism into unit converter
 
 
 if (__name__ == "__main__"):
-    prompt_converter()
+    unit_converter()

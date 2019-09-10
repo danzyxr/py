@@ -2,20 +2,32 @@ import math
 from fractions import Fraction
 
 
-def types():
-    print(type(369))
-    print(type(math.pi))
-    print(type(2 + 3j))
-    print(type("kek"))
-    print(type(True))
+def sum(a, b):
+    s = a + b
+    return s
 
 
-def fract():
+def difference(a, b):
+    d = a - b
+    return d
+
+
+def product(a, b):
+    p = a * b
+    return p
+
+
+def quotient(a, b):
+    q = a / b
+    return q
+
+
+def get_fraction():
     try:
         fr = Fraction(input("Enter a fraction: "))
     except ZeroDivisionError:
         print("Cannot divide by zero!")
-    print(fr)
+    return fr
 
 
 def cmplx():
@@ -45,7 +57,7 @@ def cmplx():
     # print(c_2.imag)
 
 
-def calc():
+def get_nums():
     try:
         num_1 = float(input("Enter 1st number: "))
     except ValueError:
@@ -55,9 +67,7 @@ def calc():
         num_2 = float(input("Enter 2nd number: "))
     except ValueError:
         print("Bad input!")
-
-    product = num_1 * num_2
-    print(product)
+    return num_1, num_2
 
 
 def factor(a, b):
@@ -77,10 +87,6 @@ def all_factors(x):
     return factor_list
 
 
-# def factorStore(x):
-#     for i in range(1, x+1):
-
-
 def solve_quadratic(a, b, c):
     D = (b*b - 4*a*c)
     x_1 = (-b + math.sqrt(D))/(2*a)
@@ -96,11 +102,6 @@ def my_range():
         print(i)
     for i in range(0, 10, 3):
         print(i)
-
-
-def multi_table(a):
-    for i in range(1, 11):
-        print(f"{a} x {i} = {a*i}")
 
 
 def format(x):
@@ -144,10 +145,11 @@ def print_menu():
 
 
 def unit_converter():  # this is too clunky
-    choice = None
-    while choice != "0":
+    while True:
         print_menu()
         choice = input("Enter a listed number: ")
+        if choice == "0":
+            break
         if choice == "1":
             feet = int(input("Enter feet (as int): "))
             inches = int(input("Enter inches (as int): "))
@@ -168,9 +170,38 @@ def unit_converter():  # this is too clunky
 
 
 # def switch(n):
-#     switcher = {}
-# integrate switcher mechanism into unit converter
+#     switcher = {
+#         1:
+#         2:
+#         3:
+#     }
+#     print switcher.get(n, "Invalid option")
+
+
+"""
+Challenges for chapter one
+"""
+
+
+def odd_even_vendor(x):
+    if isinstance(x, int):
+        vend = [x]
+        for i in range(1, 10):
+            vend.append(x + (2*i))
+        if (x % 2) == 0:
+            print("Even")
+        else:
+            print("Odd")
+        print(vend)
+    else:
+        print("Not an integer!")
+
+
+def multi_table(a, b):
+    for i in range(1, b+1):
+        print(f"{a} x {i} = {a*i}")
 
 
 if (__name__ == "__main__"):
-    unit_converter()
+    odd_even_vendor(3)
+    multi_table(3, 6)

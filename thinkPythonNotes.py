@@ -43,16 +43,24 @@ book_price = 24.95
 order_total = (book_price * discount_percent) * order_amount
 shipping_cost = 3 + (.75 * (order_amount - 1))
 grand_total = order_total + shipping_cost
-print(grand_total)
+print(f"Grand total: {grand_total}")
 
 # exercise 2.3.3
 
-# clock_hour = 6
-# clock_mins = 52
-# clock_secs = 0
+clock_hour = 6
+clock_mins = 52
+clock_secs = 0
+total_secs = (clock_hour * 3600) + (clock_mins * 60)
 
-# easy_mins = 8
-# easy_secs = 15
+slow = (8 * 60) + 15
+fast = (7 * 60) + 12
 
-# tempo_mins = 7
-# tempo_secs = 12
+total_secs += (slow * 2) + (fast * 3)
+
+clock_hour = total_secs // 3600
+clock_mins = (total_secs % 3600) // 60
+clock_secs = int((((total_secs % 3600) / 60) % 1) * 60)
+
+print(f"Clock hour is {clock_hour}")
+print(f"Clock mins is {clock_mins}")
+print(f"Clock secs is {clock_secs}")

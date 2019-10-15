@@ -6,17 +6,19 @@ import matplotlib.pyplot as plt
 ax = []
 x_coords = []
 y_coords = []
-coe_a, coe_b, coe_c = 0, 0, 0
+coeffs = []
 
 
-def quadratic(x):
-    return (coe_a*(x**2)) + (coe_b*x) + coe_c
+def quadratic(x, coe):
+    return (coe[0]*(x**2)) + (coe[1]*x) + coe[2]
 
 
 def get_coeffs():
-    print("Quadratic equation: 0 = a(x^2) + b(x) + c")
-    a, b, c = input("Enter coefficents as a b c: ").split()
-    coe_a, coe_b, coe_c = float(a), float(b), float(c)
+    coeffs.clear()
+    n = int(input("Number of coefficients: "))
+    for i in range(n):
+        coeffs.append(input(f"Enter coefficient {i+1}: "))
+    print(coeffs)
 
 
 def get_coords(fn, lo, hi):
@@ -26,9 +28,9 @@ def get_coords(fn, lo, hi):
     y_coords.clear()
     for n in range(lo, hi):
         x_coords.append(n)
-        y_coords.append(fn(n))
+        y_coords.append(fn(n, coeffs))
     ax.clear()
-    ax.extend([lo, hi, fn(lo), fn(hi)])
+    ax.extend([lo, hi, fn(lo, coeffs), fn(hi, coeffs)])
 
 
 def draw_graph(x, y, ax):
@@ -66,3 +68,5 @@ if __name__ == "__main__":
     get_coeffs()
     get_coords(quadratic, -100, 100)
     draw_graph(x_coords, y_coords, ax)
+    input("Press enter to quit...")
+    quit()

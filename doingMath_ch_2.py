@@ -17,7 +17,7 @@ def get_coeffs():
     coeffs.clear()
     n = int(input("Number of coefficients: "))
     for i in range(n):
-        coeffs.append(input(f"Enter coefficient {i+1}: "))
+        coeffs.append(float(input(f"Enter coefficient {i+1}: ")))
     print(coeffs)
 
 
@@ -26,10 +26,11 @@ def get_coords(fn, lo, hi):
     hi = int(hi)
     x_coords.clear()
     y_coords.clear()
-    for n in range(lo, hi):
+    for n in range(lo, hi+1):
         x_coords.append(n)
         y_coords.append(fn(n, coeffs))
     ax.clear()
+    # buffer = (hi - lo) * 0.2
     ax.extend([lo, hi, fn(lo, coeffs), fn(hi, coeffs)])
 
 
@@ -66,7 +67,7 @@ def draw_graph(x, y, ax):
 
 if __name__ == "__main__":
     get_coeffs()
-    get_coords(quadratic, -100, 100)
+    get_coords(quadratic, 0, 100)
     draw_graph(x_coords, y_coords, ax)
     input("Press enter to quit...")
     quit()

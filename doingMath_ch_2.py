@@ -13,6 +13,12 @@ def quadratic(x, coe):
     return (coe[0]*(x**2)) + (coe[1]*x) + coe[2]
 
 
+def gravy(r, m1, m2):
+    G = 6.674e-11
+    force = G*(m1*m2)/(r**2)
+    return force
+
+
 def get_coeffs():
     coeffs.clear()
     n = int(input("Number of coefficients: "))
@@ -30,7 +36,6 @@ def get_coords(fn, lo, hi):
         x_coords.append(n)
         y_coords.append(fn(n, coeffs))
     ax.clear()
-    # buffer = (hi - lo) * 0.2
     ax.extend([lo, hi, fn(lo, coeffs), fn(hi, coeffs)])
 
 

@@ -40,6 +40,9 @@ def get_coords_poly(fn, lo, hi):
         y_coords.append(fn(n, coeffs))
     ax.clear()
     ax.extend([lo, hi, fn(lo, coeffs), fn(hi, coeffs)])
+    plt.title("Plot of polynomial function")
+    plt.xlabel("x-values")
+    plt.ylabel("y-values")
 
 
 def draw_graph(x, y, ax):
@@ -48,16 +51,35 @@ def draw_graph(x, y, ax):
     plt.show()
 
 
-def gravity(r, m1, m2):
+def gravity(m1, m2, r):
     G = 6.674e-11
-    force = G*(m1*m2)/(r**2)
+    force = (G*(m1*m2))/(r**2)
     return force
+
+
+def get_vars_gravity():
+    m1 = float(input("Mass of object 1: "))
+    m2 = float(input("Mass of object 2: "))
+    r_i = int(input("Initial distance between them: "))
+    r_f = int(input("Final distance between them: "))
+    inc = int(input("Increments: "))
+    r = range(r_i, (r_f+1), inc)
+    return m1, m2, r
 
 
 def get_coords_gravity():
     x_coords.clear()
     y_coords.clear()
-    pass
+    m1, m2, r = get_vars_gravity()
+    for dist in r:
+        f = gravity(m1, m2, dist)
+        x_coords.append(dist)
+        y_coords.append(f)
+    ax.clear()
+    ax.extend([x_coords[0], x_coords[-1], y_coords[-1], y_coords[0]])
+    plt.title("Gravity between two massive objects")
+    plt.xlabel("Distance in meters")
+    plt.ylabel("Force in newtons")
 
 
 # examples of matplotlib stuff
@@ -89,8 +111,12 @@ def get_coords_gravity():
 
 
 if __name__ == "__main__":
-    get_coeffs_poly()
-    get_coords_poly(polynomial, 0, 100)
+    # get_coeffs_poly()
+    # get_coords_poly(polynomial, 0, 100)
+    # draw_graph(x_coords, y_coords, ax)
+
+    get_coords_gravity()
     draw_graph(x_coords, y_coords, ax)
+
     input("Press enter to quit...")
     quit()

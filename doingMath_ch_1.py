@@ -34,7 +34,7 @@ def cmplx():
     try:
         cmplx = complex(input("Enter a complex number as 'a+bj'"))
     except ValueError:
-        print("Enter as 'a+bj' & without spaces.")
+        print("Enter as 'a+bj' (without spaces).")
     print(cmplx)
 
     # c_1 = complex(2, 3)
@@ -62,7 +62,6 @@ def get_nums():
         num_1 = float(input("Enter 1st number: "))
     except ValueError:
         print("Bad input!")
-
     try:
         num_2 = float(input("Enter 2nd number: "))
     except ValueError:
@@ -176,11 +175,6 @@ def unit_converter():  # this is too clunky
 #         3:
 #     }
 #     print switcher.get(n, "Invalid option")
-
-
-"""
-Challenges for chapter one
-"""
 
 
 def odd_even_vendor(x):

@@ -2,22 +2,22 @@ import math
 from fractions import Fraction
 
 
-def sum(a, b):
+def add(a, b):
     s = a + b
     return s
 
 
-def difference(a, b):
+def subtract(a, b):
     d = a - b
     return d
 
 
-def product(a, b):
+def multiply(a, b):
     p = a * b
     return p
 
 
-def quotient(a, b):
+def divide(a, b):
     q = a / b
     return q
 
@@ -37,24 +37,25 @@ def cmplx():
         print("Enter as 'a+bj' (without spaces).")
     print(cmplx)
 
-    # c_1 = complex(2, 3)
-    # c_2 = complex(4, 6)
 
-    # print(abs(7 + 9j))
+# c_1 = complex(2, 3)
+# c_2 = complex(4, 6)
 
-    # print(c_1 * c_2)
-    # print(c_1 / c_2)
-    # print(c_1 + c_2)
-    # print(c_1 - c_2)
+# print(abs(7 + 9j))
 
-    # print(c_1.conjugate())
-    # print(c_2.conjugate())
+# print(c_1 * c_2)
+# print(c_1 / c_2)
+# print(c_1 + c_2)
+# print(c_1 - c_2)
 
-    # print(c_1.real)
-    # print(c_1.imag)
+# print(c_1.conjugate())
+# print(c_2.conjugate())
 
-    # print(c_2.real)
-    # print(c_2.imag)
+# print(c_1.real)
+# print(c_1.imag)
+
+# print(c_2.real)
+# print(c_2.imag)
 
 
 def get_nums():
@@ -87,7 +88,7 @@ def all_factors(x):
 
 
 def solve_quadratic(a, b, c):
-    D = (b*b - 4*a*c)
+    D = ((b*b) - (4*a*c))
     x_1 = (-b + math.sqrt(D))/(2*a)
     x_2 = (-b - math.sqrt(D))/(2*a)
     roots = (x_1, x_2)
@@ -103,7 +104,7 @@ def my_range():
         print(i)
 
 
-def format(x):
+def custom_format(x):
     print("{0:.2f}".format(x))
 
 
@@ -134,7 +135,7 @@ def C_to_K(C):
     return (C + 273.15)
 
 
-def print_menu():
+def unit_menu():
     print("0. exit")
     print("1. feet to meters")
     print("2. miles to kilmometers")
@@ -145,7 +146,7 @@ def print_menu():
 
 def unit_converter():  # this is too clunky
     while True:
-        print_menu()
+        unit_menu()
         choice = input("Enter a listed number: ")
         if choice == "0":
             break
@@ -197,5 +198,6 @@ def multi_table(a, b):
 
 
 if (__name__ == "__main__"):
-    odd_even_vendor(3)
     multi_table(3, 6)
+    odd_even_vendor(3)
+    unit_converter()

@@ -144,7 +144,7 @@ def unit_menu():
     print("5. celsius to kelvin")
 
 
-def unit_converter():  # this is too clunky
+def unit_converter():  # This is too clunky
     while True:
         unit_menu()
         choice = input("Enter a listed number: ")

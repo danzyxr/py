@@ -1,6 +1,6 @@
-# chapter 2
+# Chapter 2
 
-# exercise 2.2
+# Exercise 2.2
 
 width = 17
 height = 12.0
@@ -12,12 +12,12 @@ print(height/3)
 print(1 + 2 * 5)
 print(delimiter * 5)
 
-# exercise 2.3.1
+# Exercise 2.3.1
 
 r = 5
 print((4/3)*3.14*(r**3))
 
-# exercise 2.3.2
+# Exercise 2.3.2
 
 order_amount = 50
 discount_percent = 0.4
@@ -28,7 +28,7 @@ shipping_cost = 3 + (.75 * (order_amount - 1))
 grand_total = order_total + shipping_cost
 print(f"Grand total: {grand_total}")
 
-# exercise 2.3.3
+# Exercise 2.3.3
 
 clock_hour = 6
 clock_mins = 52

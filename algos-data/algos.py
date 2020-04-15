@@ -1,8 +1,6 @@
 import string
 
 '''
-So this might be useful...
-Data Structures and Algorithms!!
 1:        constant
 log(n):   logarithmic
 n:        linear

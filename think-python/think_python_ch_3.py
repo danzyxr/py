@@ -1,5 +1,7 @@
 import math
 
+# Chapter 3
+
 
 def signal_noise(signal, noise):
     ratio = signal / noise

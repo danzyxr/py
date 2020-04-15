@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-# examples of matplotlib.plt stuff
+# Examples of matplotlib.plt stuff
 
 nyc_temp_2000 = [31.3, 37.3, 47.2, 51.0, 63.5,
                  71.3, 72.3, 72.7, 66.0, 57.0, 45.3, 31.1]
@@ -15,7 +15,6 @@ plt.legend([2000, 2006, 2012])
 plt.xlabel('Months')
 plt.ylabel('Temperature')
 plt.title('NYC\'s Average Monthly Temperature')
-print(plt.axis())
 plt.axis(xmin=1, xmaxes=12)
 plt.axis(ymin=0, ymaxes=80)
 plt.axis([1, 12, 0, 80])

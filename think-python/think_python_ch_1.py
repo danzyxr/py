@@ -1,6 +1,6 @@
-# chapter 1
+# Chapter 1
 
-# exercise 1.3
+# Exercise 1.3
 
 km = 10
 mi = km / 1.61

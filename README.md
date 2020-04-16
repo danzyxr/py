@@ -8,10 +8,9 @@ I'm compiling a list of projects/books for personal study.
 
 - think python - green tea press
 - modeling and simulation - green tea press
+- data science fundamentals for python & mongodb
 - doing math with python - no starch press
 
 ## ultimate plan
 
-Expand upon interesting chapters into cool portfolio projects. :)  
-Most exercises will evolve into individual modules worth looking at.  
-This repo will serve as a fun playground where these ideas live.
+PORTFOLIO OF COOL STUFF!!

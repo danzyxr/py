@@ -9,11 +9,11 @@ key = "password123"
 print("Log in")
 
 username = input("Please enter your username: ")
-while ((len(username) == 0) and (username.lower() != uid.lower())):
+while (len(username) == 0) and (username.lower() != uid.lower()):
     username = input("Please enter your username: ")
 
 password = input("Please enter your password: ")
-while ((len(password) == 0) and (password != key)):
+while (len(password) == 0) and (password != key):
     password = input("Please enter your password: ")
 
 print(f"Welcome, {username}")

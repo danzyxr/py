@@ -6,11 +6,13 @@ I'm compiling a list of projects/books for personal study.
 
 ## what i'm currently working on
 
-- think python - green tea press
-- modeling and simulation - green tea press
+- doing math with python
+- a first course on data structures in python
 - data science fundamentals for python & mongodb
-- doing math with python - no starch press
+- modeling & simulation
 
 ## ultimate plan
 
-PORTFOLIO OF COOL STUFF!!
+- develop skills in data science, complexity science, etc.
+- acquire knowledge domains in biochemistry, genetics, & finance
+- apply said skills to said domains to discover new questions

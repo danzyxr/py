@@ -1,25 +1,31 @@
 import math
 import matplotlib.pyplot as plt
 
-# Plotting with
-# Cartesian coordinates
-# Don't use global lists!!
-# Make purely functional
+# UI + Visualiser
+# Exception handling
 
 
 def linear(m, x, b):
-    return (m*x) + b
+    return (m * x) + b
 
 
 def quadratic(x, coe):
-    return (coe[0]*(x**2)) + (coe[1]*x) + coe[2]
+    return (coe[0] * (x ** 2)) + (coe[1] * x) + coe[2]
+
+
+def solve_quadratic(a, b, c):
+    D = (b * b) - (4 * a * c)
+    x_1 = (-b + math.sqrt(D)) / (2 * a)
+    x_2 = (-b - math.sqrt(D)) / (2 * a)
+    roots = (x_1, x_2)
+    return roots
 
 
 def polynomial(x, coe):
     y = 0
     for i in range(0, (len(coe) - 1)):
-        y = y + coe[i]*(x**(len(coe) - (i + 1)))
-    return coe[-1] + y
+        y = y + coe[i] * (x ** (len(coe) - (i + 1)))
+    return y + coe[-1]
 
 
 def get_coeffs_poly():
@@ -33,7 +39,7 @@ def get_coeffs_poly():
 def get_coords_poly(fn, coeffs, lo, hi):
     x = []
     y = []
-    for n in range(int(lo), int(hi+1)):
+    for n in range(int(lo), int(hi + 1)):
         x.append(n)
         y.append(fn(n, coeffs))
     ax = []
@@ -45,31 +51,32 @@ def get_coords_poly(fn, coeffs, lo, hi):
     return x, y, ax
 
 
-def draw_graph(x, y, ax):
-    plt.axis(ax)
-    plt.plot(x, y, marker="o")
-    plt.show()
+def factor(a, b):
+    if (b % a) == 0:
+        # print(f"{a} is a factor of {b}")
+        return a
+
+
+def all_factors(x):
+    i = 1
+    factor_list = []
+    while i <= x:
+        if isinstance(factor(i, x), int):
+            factor_list.append(factor(i, x))
+        i = i + 1
+    # print(f"Factors of {x} are {factor_list}")
+    return factor_list
 
 
 def gravity(m1, m2, r):
     G = 6.674e-11
-    force = (G*(m1*m2))/(r**2)
+    force = (G * (m1 * m2)) / (r ** 2)
     return force
-
-
-'''
-def get_vars_gravity():
-    m1 = float(input("Mass of obj 1 (in tonnes): ")) * 1000
-    m2 = float(input("Mass of obj 2 (in tonnes): ")) * 1000
-    r = range(1, 101, 1)
-    return m1, m2, r
-'''
 
 
 def get_coords_gravity(m1, m2, r):
     x = []
     y = []
-    # m1, m2, r = get_vars_gravity()
     for dist in r:
         f = gravity(m1, m2, dist)
         x.append(dist)
@@ -103,22 +110,16 @@ def get_coords_trajectory(u, theta):
     ax = []
     ax.extend([min(x), max(x), min(y), max(y)])
     plt.title(f"Object trajectory @ {u}m/s & {theta} degrees")
-    plt.ylabel("Height reached")
-    plt.xlabel("Ground traveled")
+    plt.xlabel("Distance traveled [m]")
+    plt.ylabel("Height reached [m]")
     return x, y, ax
 
 
+def draw_graph(x, y, ax):
+    plt.axis(ax)
+    plt.plot(x, y, marker="o")
+    plt.show()
+
+
 if __name__ == "__main__":
-    coeffs = [0.5, 2, 0.25]
-    # coeffs = get_coeffs_poly()
-    x, y, ax = get_coords_poly(polynomial, coeffs, 0, 100)
-    draw_graph(x, y, ax)
-
-    g_x, g_y, g_ax = get_coords_gravity(0.5, 1.5, frange(1, 11, 0.1))
-    draw_graph(g_x, g_y, g_ax)
-
-    t_x, t_y, t_ax = get_coords_trajectory(25, 60)
-    draw_graph(t_x, t_y, t_ax)
-
-    input("Press enter to quit...")
-    quit()
+    pass

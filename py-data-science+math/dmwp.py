@@ -1,4 +1,4 @@
-import math
+# import math
 from fractions import Fraction
 
 
@@ -70,31 +70,6 @@ def get_nums():
     return num_1, num_2
 
 
-def factor(a, b):
-    if (b % a) == 0:
-        # print(f"{a} is a factor of {b}")
-        return a
-
-
-def all_factors(x):
-    i = 1
-    factor_list = []
-    while (i <= x):
-        if isinstance(factor(i, x), int):
-            factor_list.append(factor(i, x))
-        i = i + 1
-    # print(f"Factors of {x} are {factor_list}")
-    return factor_list
-
-
-def solve_quadratic(a, b, c):
-    D = ((b*b) - (4*a*c))
-    x_1 = (-b + math.sqrt(D))/(2*a)
-    x_2 = (-b - math.sqrt(D))/(2*a)
-    roots = (x_1, x_2)
-    return(roots)
-
-
 def my_range():
     for i in range(5):
         print(i)
@@ -112,27 +87,27 @@ def feet_to_meters(feet, inches):
     if isinstance(feet, int):
         if isinstance(inches, int):
             feet = float(feet + (inches / 12))
-            return (feet * 0.3048)
+            return feet * 0.3048
         else:
-            return ("Integers only!")
+            return "Integers only!"
     else:
-        return ("Integers only!")
+        return "Integers only!"
 
 
 def miles_to_kilometers(miles):
-    return (miles * 1.60934)
+    return miles * 1.60934
 
 
 def F_to_C(F):
-    return ((F - 32) * (5/9))
+    return (F - 32) * (5 / 9)
 
 
 def C_to_F(C):
-    return ((C * (9/5)) + 32)
+    return (C * (9 / 5)) + 32
 
 
 def C_to_K(C):
-    return (C + 273.15)
+    return C + 273.15
 
 
 def unit_menu():
@@ -182,7 +157,7 @@ def odd_even_vendor(x):
     if isinstance(x, int):
         vend = [x]
         for i in range(1, 10):
-            vend.append(x + (2*i))
+            vend.append(x + (2 * i))
         if (x % 2) == 0:
             print("Even")
         else:
@@ -193,11 +168,11 @@ def odd_even_vendor(x):
 
 
 def multi_table(a, b):
-    for i in range(1, b+1):
+    for i in range(1, b + 1):
         print(f"{a} x {i} = {a*i}")
 
 
-if (__name__ == "__main__"):
+if __name__ == "__main__":
     multi_table(3, 6)
     odd_even_vendor(3)
     unit_converter()

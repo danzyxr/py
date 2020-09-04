@@ -34,8 +34,7 @@ def binary_search_r(arr, target, lo, hi):
             return binary_search_r(arr, target, mid + 1, hi)
 
 
-data = [2, 4, 8, 16, 3, 6, 9, 11, -1, -3, -5]
-
-print(binary_search_i(data, -3))
-
-print(binary_search_r(data, 3, 0, len(data) - 1))
+if __name__ == "__main__":
+    data = [2, 4, 8, 16, 3, 6, 9, 11, -1, -3, -5]
+    print(binary_search_i(data, -3))
+    print(binary_search_r(data, 3, 0, len(data) - 1))

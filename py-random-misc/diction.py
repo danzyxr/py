@@ -1,8 +1,4 @@
-diction = {
-    "brand": "Ford",
-    "model": "Fiesta ST",
-    "year": 2015
-}
+diction = {"brand": "Ford", "model": "Fiesta ST", "year": 2015}
 
 print(list(diction.items()))
 print(list(zip(diction.keys(), diction.values())))

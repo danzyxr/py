@@ -1,7 +1,5 @@
 import matplotlib.pyplot as plt
 
-# Examples of matplotlib.plt stuff
-
 nyc_temp_2000 = [31.3, 37.3, 47.2, 51.0, 63.5,
                  71.3, 72.3, 72.7, 66.0, 57.0, 45.3, 31.1]
 nyc_temp_2006 = [40.9, 35.7, 43.1, 55.7, 63.1,

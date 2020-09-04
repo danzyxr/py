@@ -2,16 +2,19 @@ import os
 import json
 
 list = []
-path = "/home/dan/py/json/"
+path = "C:/Users/dan/Desktop/fcc-notes/css/"
 file = os.listdir(path)
 
 for f in file:
-    if f.endswith('.json'):
+    if f.endswith(".json"):
         list.append(path + f)
 
-print(list)
+for each in list:
+    print(each)
 
 for i in range(len(list)):
     with open(list[i]) as f:
         data = json.load(f)
-        print(data)
+        print("\n", data)
+
+quit()

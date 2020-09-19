@@ -86,3 +86,10 @@ if __name__ == "__main__":
     }
 
     dict_ls.append(tropical_recipe)
+    print(dict_ls)
+
+    print("\n")
+
+    for i, row in enumerate(dict_ls):
+        print("row", i, ":")
+        print(row)

@@ -100,11 +100,11 @@ def frange(i, f, inc):
 def get_coords_trajectory(u, theta):
     g = 9.8
     rads = math.radians(theta)
-    t_flight = 2 * u * math.sin(rads) / g
-    t_intervals = frange(0, t_flight, 0.001)
+    time_flight = 2 * u * math.sin(rads) / g
+    time_intervals = frange(0, time_flight, 0.001)
     x = []
     y = []
-    for t in t_intervals:
+    for t in time_intervals:
         x.append(u * math.cos(rads) * t)
         y.append(u * math.sin(rads) * t - 0.5 * g * t * t)
     ax = []

@@ -1,3 +1,6 @@
 json/*
 .vscode/*
 .venvs/*
+*.log
+*.pyc
+tempCodeRunnerFile.py

@@ -2,7 +2,25 @@ import calc
 
 # A demonstration of calc.py
 
+
+def compare_trajectory():
+    while True:
+        try:
+            n = input("How many trajectories? ")
+        except Exception as e:
+            print(e)
+    print(n)
+
+    # ivelo = input("Enter initial velocity (m/s): ")
+    # angle = input("Enter angle (degrees): ")
+
+
 if __name__ == "__main__":
+    compare_trajectory()
+
+    input("Press enter to quit...")
+    quit()
+
     coe = [1, 2, 1]
     x_values = [-1, 1, 2, 3, 4, 5]
     y_values = []

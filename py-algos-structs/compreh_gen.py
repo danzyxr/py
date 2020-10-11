@@ -28,6 +28,9 @@ def runner_up():
     print(arr[-2])
 
 
+runner_up()
+
+
 if __name__ == "__main__":
     my_arr = [1, 2, 3, 4, 5, 6]
 

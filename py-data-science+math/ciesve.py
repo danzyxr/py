@@ -6,4 +6,6 @@ def read_text(file):
         data = f.readlines()
         return [line.strip() for line in data]
 
-def convert_to_csv()
+
+def convert_to_csv():
+    pass

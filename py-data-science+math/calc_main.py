@@ -6,13 +6,33 @@ import calc
 def compare_trajectory():
     while True:
         try:
-            n = input("How many trajectories? ")
+            n = int(input("How many trajectories? "))
+            if (type(n) == int) and (n > 0):
+                break
+            print("Enter a positive integer number")
         except Exception as e:
             print(e)
-    print(n)
-
-    # ivelo = input("Enter initial velocity (m/s): ")
-    # angle = input("Enter angle (degrees): ")
+    for _ in range(n):
+        while True:
+            try:
+                ivelo = float(input("Enter initial velocity (m/s): "))
+                if ivelo > 0:
+                    break
+                print("Enter a positive number")
+            except Exception as e:
+                print(e)
+        while True:
+            try:
+                angle = float(input("Enter initial velocity (m/s): "))
+                if (angle > 0) and (angle < 180):
+                    break
+                print("Enter a positive number")
+            except Exception as e:
+                print(e)
+        print(f"${n, ivelo, angle}")
+        t_x, t_y, t_ax = calc.get_coords_trajectory(ivelo, angle)
+        calc.draw_graph(t_x, t_y, t_ax)
+    calc.show_graph()
 
 
 if __name__ == "__main__":
@@ -35,12 +55,15 @@ if __name__ == "__main__":
     # coeffs = get_coeffs_poly()
     x, y, ax = calc.get_coords_poly(calc.polynomial, coeffs, 0, 100)
     calc.draw_graph(x, y, ax)
+    calc.show_graph()
 
     g_x, g_y, g_ax = calc.get_coords_gravity(0.5, 1.5, calc.frange(1, 11, 0.1))
     calc.draw_graph(g_x, g_y, g_ax)
+    calc.show_graph()
 
     t_x, t_y, t_ax = calc.get_coords_trajectory(25, 60)
     calc.draw_graph(t_x, t_y, t_ax)
+    calc.show_graph()
 
     input("Press enter to quit...")
     quit()

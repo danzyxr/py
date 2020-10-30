@@ -118,6 +118,9 @@ def get_coords_trajectory(u, theta):
 def draw_graph(x, y, ax):
     plt.axis(ax)
     plt.plot(x, y, marker="o")
+
+
+def show_graph():
     plt.show()
 
 
